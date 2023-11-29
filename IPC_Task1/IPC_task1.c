@@ -35,7 +35,7 @@ BaseType_t IPC_task1_init(void)
                             "LED Toggle",
                             configMINIMAL_STACK_SIZE,
                             (void*) NULL,
-                            tskIDLE_PRIORITY + 2,   // Highest priority in the system
+                            tskIDLE_PRIORITY + 1,
                             &xHandle1);
     
     if(xReturned == pdPASS)
@@ -44,7 +44,7 @@ BaseType_t IPC_task1_init(void)
                         "Button Task",
                         configMINIMAL_STACK_SIZE,
                         (void*) NULL,
-                        tskIDLE_PRIORITY + 1,   // Second highest priority in the system
+                        tskIDLE_PRIORITY + 2,
                         &xHandle2);
 
         if(xReturned != pdPASS)
