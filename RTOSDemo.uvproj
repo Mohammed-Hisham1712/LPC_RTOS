@@ -512,6 +512,21 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>IPC Task1</GroupName>
+          <Files>
+            <File>
+              <FileName>IPC_task1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IPC_Task1\IPC_task1.c</FilePath>
+            </File>
+            <File>
+              <FileName>IPC_task1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\IPC_Task1\IPC_task1.h</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
     <Target>
@@ -868,7 +883,7 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>2</wLevel>
+            <wLevel>1</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
@@ -885,7 +900,7 @@
               <MiscControls></MiscControls>
               <Define>ARM7_LPC21xx_KEIL_RVDS KEIL_THUMB_INTERWORK</Define>
               <Undefine></Undefine>
-              <IncludePath>.;..\..\Source\portable\RVDS\ARM7_LPC21xx;Starter_Files_V1\header;..\Common\include;..\..\Source\include;Starter_Files_V1\lib</IncludePath>
+              <IncludePath>.;..\..\Source\portable\RVDS\ARM7_LPC21xx;Starter_Files_V1\header;..\Common\include;..\..\Source\include;Starter_Files_V1\lib;IPC_Task1</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1018,6 +1033,21 @@
               <FileName>portASM.s</FileName>
               <FileType>2</FileType>
               <FilePath>..\..\Source\portable\RVDS\ARM7_LPC21xx\portASM.s</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>IPC Task1</GroupName>
+          <Files>
+            <File>
+              <FileName>IPC_task1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IPC_Task1\IPC_task1.c</FilePath>
+            </File>
+            <File>
+              <FileName>IPC_task1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\IPC_Task1\IPC_task1.h</FilePath>
             </File>
           </Files>
         </Group>
