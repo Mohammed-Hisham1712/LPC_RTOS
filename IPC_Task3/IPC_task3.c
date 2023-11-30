@@ -12,6 +12,7 @@
 
 #define HELLO_TASK_MS           100
 #define BUTTON_TASK_MS          25
+#define SENT_TASK_MS						5
 
 #define SERIAL_QUEUE_SIZE       10
 
@@ -69,7 +70,7 @@ BaseType_t IPC_task3_init(void)
                     "Button0 Task",
                     configMINIMAL_STACK_SIZE,
                     (void*) 0,
-                    tskIDLE_PRIORITY + 2,
+                    tskIDLE_PRIORITY + 3,
                     &xButtonTaskHandle0);
         
         if(xReturn != pdPASS)
@@ -85,7 +86,7 @@ BaseType_t IPC_task3_init(void)
                     "Button1 Task",
                     configMINIMAL_STACK_SIZE,
                     (void*) 1,
-                    tskIDLE_PRIORITY + 2,
+                    tskIDLE_PRIORITY + 3,
                     &xButtonTaskHandle1);
         
         if(xReturn != pdPASS)
@@ -125,7 +126,8 @@ static void SerialSendTask(void* pvParameters)
         if(xQueueReceive(xSerialQueue, (void*) &pcRecvMessage, portMAX_DELAY) == pdTRUE)
         {
             uMsgLength = strlen(pcRecvMessage) + 1;
-            while(vSerialPutString(pcRecvMessage, uMsgLength) != pdTRUE);
+            vSerialPutString(pcRecvMessage, uMsgLength);
+						vTaskDelay(pdMS_TO_TICKS(SENT_TASK_MS));
         }
     }
 
