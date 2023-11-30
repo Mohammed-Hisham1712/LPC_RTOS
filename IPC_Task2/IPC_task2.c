@@ -79,7 +79,8 @@ static void vSendTask1(void* pvParameters)
         {
             for(i = 0; i < 10; i++)
             {
-                while(vSerialPutString(TASK1_MESSAGE, sizeof(TASK1_MESSAGE)) != pdTRUE);
+                vSerialPutString(TASK1_MESSAGE, sizeof(TASK1_MESSAGE));
+								vTaskDelay(3);		/* Wait until message is sent over UART */
             }
 
             xSemaphoreGive(xSerialSem);
@@ -104,7 +105,7 @@ static void vSendTask2(void* pvParameters)
         {
             for(i = 0; i < 10; i++)
             {
-                while(vSerialPutString(TASK2_MESSAGE, sizeof(TASK2_MESSAGE)) != pdTRUE);
+                vSerialPutString(TASK2_MESSAGE, sizeof(TASK2_MESSAGE));
                 for(j = 0; j < 100000; j++);
             }
 
