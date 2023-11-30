@@ -65,6 +65,7 @@
 #include "serial.h"
 #include "GPIO.h"
 
+#include "IPC_task1.h"
 
 /*-----------------------------------------------------------*/
 
@@ -95,7 +96,7 @@ int main( void )
 
 	
     /* Create Tasks here */
-		
+	IPC_task1_init();
 	
 
 	/* Now all the tasks have been started - start the scheduler.
