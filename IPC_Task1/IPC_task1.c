@@ -44,7 +44,7 @@ BaseType_t IPC_task1_init(void)
                         "Button Task",
                         configMINIMAL_STACK_SIZE,
                         (void*) NULL,
-                        tskIDLE_PRIORITY + 2,
+                        tskIDLE_PRIORITY + 1,
                         &xHandle2);
 
         if(xReturned != pdPASS)
